@@ -2,6 +2,7 @@
 
 require_relative "config/environment"
 
-use Rack::CanonicalHost, ENV["HOSTNAME"] if ENV["HOSTNAME"].present?
+# render.com sets HOSTNAME but not to a FQDN so this breaks us
+# use Rack::CanonicalHost, ENV["HOSTNAME"] if ENV["HOSTNAME"].present?
 run Rails.application
 Rails.application.load_server

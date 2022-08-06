@@ -1,0 +1,19 @@
+databases:
+  # cannot have - in databaseName or user
+  - name: eoin_demo_3
+    databaseName: eoin_demo_3
+    user: eoin_demo_3
+
+services:
+  - type: web
+    name: eoin_demo_3
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: eoin_demo_3
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false

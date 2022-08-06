@@ -167,6 +167,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.8-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.8-x86_64-linux)
+      racc (~> 1.4)
     okcomputer (1.18.4)
     overcommit (0.59.1)
       childprocess (>= 0.6.3, < 5)
@@ -337,6 +339,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   axe-matchers
